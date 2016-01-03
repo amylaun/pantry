@@ -1,0 +1,9 @@
+{
+  "name": "Pantry",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Web app for creating and saving pantry ingredients.",
+  "dependencies": {
+    "angular": "^1.4.8"
+  }
+}
