@@ -4,6 +4,15 @@
   "version": "0.0.1",
   "description": "Web app for creating and saving pantry ingredients.",
   "dependencies": {
-    "angular": "^1.4.8"
+    "angular": "^1.4.8",
+    "angular-local-storage": "^0.2.2",
+    "angular-route": "^1.4.8",
+    "browserify": "^12.0.1",
+    "http-server": "^0.8.5",
+    "watchify": "^3.6.1"
+  },
+  "scripts": {
+    "watch": "watchify js/src.js -o js/main.js -v",
+    "start": "npm run watch & http-server -o -c-1"
   }
 }

@@ -1,0 +1,53 @@
+<main class="" role="main">
+    <form id="form-login" ng-submit="login()">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" ng-model="email">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" ng-model="password">
+        <input type="submit" value="Submit">
+    </form>
+    <button ng-click="logout()">Log Out</button>
+    <table id="pantry">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Amount</th>
+                <th>Expiration Date</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in items">
+                <td>{{item.name}}</td>
+                <td>{{item.amount}}</td>
+                <td>{{item.exp | date: 'mediumDate'}}</td>
+                <td>{{item.desc}}</td>
+                <td><button ng-click="itemDelete(item._id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form id="form-item" ng-submit="itemSubmit()">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" ng-model="name">
+        <label for="exp">Expiration Date</label>
+        <input type="text" id="exp" name="exp" ng-model="exp"><br>
+        <label for="category">Category</label><br>
+        <input type="checkbox" id="grains" name="category" ng-model="category.grains"><label for="grains">Grains</label><br>
+        <input type="checkbox" id="spices" name="category" ng-model="category.spices"><label for="spices">Spices</label><br>
+        <input type="checkbox" id="produce" name="category" ng-model="category.produce"><label for="produce">Produce</label><br>
+        <label for="desc">Description</label>
+        <textarea name="desc" id="desc" ng-model="desc"></textarea>
+        <label for="amount">Amount Remaining</label>
+        <input type="text" name="amount" id="amount" ng-model="amount">
+        <label for="unit" class="hidden">Measurement Unit</label>
+        <select name="unit" id="unit">
+            <option>Cups</option>
+            <option>Ounces</option>
+            <option>Liters</option>
+            <option>Tablespoons</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+
+</main>
